@@ -1,0 +1,6 @@
+:root {
+  --white: #FFF;
+}
+
+@custom-media --small-viewport (max-width: 1024px);
+

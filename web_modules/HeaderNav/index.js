@@ -40,11 +40,14 @@ export default class HeaderNav extends Component {
                     <AppBar
                         title="Menu"
                         iconElementLeft={<IconButton onClick={this.handleToggle}><NavigationClose /></IconButton>}	/>
-                    <IndexLink to="/" activeClassName={styles.activeLink} className={styles.link}>
+                    <IndexLink to="/"  onClick={this.handleToggle} activeClassName={styles.activeLink} className={styles.link}>
                         <MenuItem>Home</MenuItem>
                     </IndexLink>
-                    <Link to="/discover" activeClassName={styles.activeLink} className={styles.link}>
+                    <Link to="/discover"  onClick={this.handleToggle} activeClassName={styles.activeLink} className={styles.link}>
                         <MenuItem>Discover</MenuItem>
+                    </Link>
+                    <Link to="/newrelease"  onClick={this.handleToggle} activeClassName={styles.activeLink} className={styles.link}>
+                        <MenuItem>New Release</MenuItem>
                     </Link>
           </LeftNav>
         </div>)

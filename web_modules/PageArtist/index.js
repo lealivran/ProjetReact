@@ -1,4 +1,5 @@
 import React, { Component, PropTypes } from 'react';
+import {Link, IndexLink} from 'react-router'
 import {connect} from "react-redux"
 import fetchJSON from "app/fetchJSON";
 import consts from "app/consts"
@@ -30,8 +31,8 @@ export default class PageArtist extends Component {
       artist : null,
       getArtist : () => {}
   };
-  componentDidMount(){
 
+  componentDidMount(){
       const {
         params,
         getArtist,
@@ -51,11 +52,17 @@ export default class PageArtist extends Component {
     }
   }
 
+
   render() {
     const {
       params,
       artist,
     } = this.props
+
+    console.log(artist);
+
+    const lienPageAlbum = "http://localhost:8080/artist/"+params.artistId+"/albums";
+
     return (
       <div>
         {
@@ -64,7 +71,11 @@ export default class PageArtist extends Component {
                          image={artist.picture ? artist.picture.url : null}
                          kinds={artist.genres}
                          songs={[{name:"..."},{name:"..."},{name:"..."}]}  />
+
         }
+        <Link to={lienPageAlbum}>
+            Accéder aux albums
+        </Link>
       </div>
     )
   }

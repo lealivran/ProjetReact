@@ -31,7 +31,7 @@ export default class HeaderNav extends Component {
       return (
         <div>
           <AppBar
-            title="React playlist Viewer"
+            title="Spotify Artist Viewer"
             iconElementLeft={<IconButton onClick={this.handleToggle}><NavigationMenu /></IconButton>}
             iconElementRight={<InputArtist />} />
             <LeftNav
@@ -45,9 +45,6 @@ export default class HeaderNav extends Component {
                     </IndexLink>
                     <Link to="/discover"  onClick={this.handleToggle} activeClassName={styles.activeLink} className={styles.link}>
                         <MenuItem>Discover</MenuItem>
-                    </Link>
-                    <Link to="/newrelease"  onClick={this.handleToggle} activeClassName={styles.activeLink} className={styles.link}>
-                        <MenuItem>New Release</MenuItem>
                     </Link>
           </LeftNav>
         </div>)

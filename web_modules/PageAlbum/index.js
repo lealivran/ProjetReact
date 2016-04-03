@@ -2,7 +2,6 @@ import React, { Component, PropTypes } from 'react';
 import {connect} from "react-redux"
 import fetchJSON from "app/fetchJSON";
 import consts from "app/consts"
-// import InputList from "InputList";
 import Album from "Album";
 
 
@@ -48,10 +47,8 @@ export default class PageAlbum extends Component {
     } = this.props
 
     fetchJSON(consts.api.enpoints.getAlbums(params.artistId)).then((response) => {
-      // console.log(response)
         if(!response.error){
           this.setState({albums:response.items})
-          // console.log(response.items)
         }
     });
   };
@@ -71,7 +68,7 @@ export default class PageAlbum extends Component {
 
     return (
       <div>
-        <h1>page album</h1>
+        <h3 style={styles.title}>Albums</h3>
 
           <div style={styles.root}>
             <GridList
@@ -80,7 +77,7 @@ export default class PageAlbum extends Component {
             >
               {this.state.albums.map((album, index) => (
                 <GridTile
-                  key={album.images[1].url}
+                  key={album.id}
                   title={album.name}
                 >
                   <img src={album.images[1].url} />

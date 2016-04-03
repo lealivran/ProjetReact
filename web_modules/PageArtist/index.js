@@ -7,6 +7,13 @@ import consts from "app/consts"
 import { get as getArtist } from "app/reducers/artist"
 
 import ItemDetails from "ItemDetails"
+import RaisedButton from 'material-ui/lib/raised-button';
+
+const styles = {
+  link: {
+    margin: 20,
+  },
+};
 
 @connect(
     (state) => ({
@@ -73,9 +80,12 @@ export default class PageArtist extends Component {
                          songs={[{name:"..."},{name:"..."},{name:"..."}]}  />
 
         }
-        <Link to={lienPageAlbum}>
+
+        <div>
+        <Link className={styles.link} to={lienPageAlbum}>
             Accéder aux albums
         </Link>
+        </div>
       </div>
     )
   }

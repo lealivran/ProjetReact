@@ -64,7 +64,7 @@ export default class PageAlbum extends Component {
       albums,
     } = this.props
 
-    console.log(this.state.albums)
+    // console.log(this.state.albums)
 
     return (
       <div>

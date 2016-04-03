@@ -40,7 +40,7 @@ export default class Routes extends Component {
             <Route path="*" component={PageNotFound}/>
           </Router>
         </Provider>
-        // { __DEVTOOLS__ && devtools }
+        { __DEVTOOLS__ && devtools }
       </div>
     )
   }
